@@ -1,0 +1,33 @@
+Package: ManagedCloudProvider
+Type: Package
+Title: Providing the kubernete-like functions to manage cloud instance for the non-kubernete cloud
+Version: 1.0.0
+Authors@R: 
+    person(given = "Jiefei",
+           family = "Wang",
+           role = c("aut", "cre"),
+           email = "szwjf08@gmail.com")
+Description: The package is designed as an extension to the "CloudProvider"
+    class in the "DockerParallel" package. It provides the kubernete-like 
+    functions to manage cloud instance for the non-kubernete cloud.
+    For creating a "CloudProvider" for the non-k8s cloud service, the developer
+    needs to define the method for the generics "runDockerWorkerContainers",
+    "getDockerWorkerStatus" and "killDockerWorkerContainers"
+Imports:
+  DockerParallel,
+  adagio,
+  methods,
+  utils
+License: GPL-3
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.1
+Suggests: 
+    markdown,
+    knitr,
+    rmarkdown,
+    testthat (>= 3.0.0)
+VignetteBuilder: knitr
+URL: https://github.com/Jiefei-Wang/DockerParallel
+BugReports: https://github.com/Jiefei-Wang/DockerParallel/issues
+Config/testthat/edition: 3
