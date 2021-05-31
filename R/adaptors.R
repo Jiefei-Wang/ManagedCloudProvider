@@ -4,6 +4,7 @@
 #' and `killDockerWorkerContainers` instead.
 #'
 #' @inheritParams  DockerParallel::setDockerWorkerNumber
+#' @param workerNumber Integer(1), the worker number to be set
 #' @export
 setMethod("setDockerWorkerNumber", "ManagedCloudProvider",
           function(provider, cluster, container, hardware, workerNumber, verbose)

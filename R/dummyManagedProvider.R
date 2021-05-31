@@ -116,6 +116,7 @@ setMethod("getDockerServerIp", "DummyManagedProvider", function(provider, cluste
 })
 
 
+#' @describeIn runDockerWorkerContainers The method for the dummy managed provider
 setMethod("runDockerWorkerContainers", "DummyManagedProvider", function(provider, cluster, container, hardware, workerNumber, verbose){
     stopifnot(provider$initialized)
     stopifnot(is(cluster, "DockerCluster"))
@@ -143,7 +144,7 @@ setMethod("runDockerWorkerContainers", "DummyManagedProvider", function(provider
     handles
 })
 
-
+#' @describeIn workerStatus The method for the dummy managed provider
 setMethod("getDockerWorkerStatus", "DummyManagedProvider", function(provider, cluster, workerHandles, verbose){
     stopifnot(provider$initialized)
     stopifnot(is(cluster, "DockerCluster"))
@@ -156,6 +157,7 @@ setMethod("getDockerWorkerStatus", "DummyManagedProvider", function(provider, cl
     status
 })
 
+#' @describeIn killDockerWorkerContainers The method for the dummy managed provider
 setMethod("killDockerWorkerContainers", "DummyManagedProvider", function(provider, cluster, workerHandles, verbose){
     stopifnot(provider$initialized)
     stopifnot(is(cluster, "DockerCluster"))
