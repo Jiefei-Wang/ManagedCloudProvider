@@ -98,7 +98,8 @@ test_that("DockerCluster stop cluster", {
 })
 
 
-test_that("DockerCluster reconnect", {
+test_that("DockerCluster reconnect: 1 server 5 worker", {
+    gc()
     provider1 <- DummyManagedProvider()
     container1 <- DummyWorkerContainer()
     cluster1 <- makeDockerCluster(
@@ -130,7 +131,38 @@ test_that("DockerCluster reconnect", {
     )
 })
 
+test_that("DockerCluster reconnect: 1 server no worker", {
+    gc()
+    provider1 <- DummyManagedProvider()
+    container1 <- DummyWorkerContainer()
+    cluster1 <- makeDockerCluster(
+        cloudProvider = provider1,
+        workerContainer = container1,
+        workerNumber = 0,
+        verbose = verbose)
+    expect_error(
+        cluster1$startCluster(),
+        NA
+    )
+    expect_identical(
+        cluster1$getWorkerNumbers(),
+        list(initializing = 0L, running = 0L, expected = 0L)
+    )
 
+    provider2 <- DummyManagedProvider()
+    container2 <- DummyWorkerContainer()
+    cluster2 <- makeDockerCluster(
+        cloudProvider = provider2,
+        workerContainer = container2,
+        workerNumber = 0,
+        verbose = verbose)
+    expect_error(cluster2$reconnect(),
+                 NA)
+    expect_identical(
+        cluster1$getWorkerNumbers(),
+        list(initializing = 0L, running = 0L, expected = 0L)
+    )
+})
 
 test_that("DockerCluster auto remove the cluster", {
     gc()
