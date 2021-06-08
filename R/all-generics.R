@@ -22,7 +22,8 @@
 setGeneric("runDockerWorkerContainers",
            function(provider, cluster, container, hardware, workerNumber, verbose){
                standardGeneric("runDockerWorkerContainers")
-           })
+           },
+           signature = "provider")
 
 
 #' Get the worker status
@@ -48,28 +49,32 @@ setGeneric("runDockerWorkerContainers",
 #' @export
 setGeneric("getDockerWorkerStatus", function(provider, cluster, workerHandles, verbose){
     standardGeneric("getDockerWorkerStatus")
-})
+},
+signature = "provider")
 
 
 #' @rdname workerStatus
 #' @export
 setGeneric("IsDockerWorkerInitializing", function(provider, cluster, workerHandles, verbose){
     standardGeneric("IsDockerWorkerInitializing")
-})
+},
+signature = "provider")
 
 
 #' @rdname workerStatus
 #' @export
 setGeneric("IsDockerWorkerRunning", function(provider, cluster, workerHandles, verbose){
     standardGeneric("IsDockerWorkerRunning")
-})
+},
+signature = "provider")
 
 
 #' @rdname workerStatus
 #' @export
 setGeneric("IsDockerWorkerStopped", function(provider, cluster, workerHandles, verbose){
     standardGeneric("IsDockerWorkerStopped")
-})
+},
+signature = "provider")
 
 #' Kill the worker container
 #'
@@ -84,4 +89,5 @@ setGeneric("IsDockerWorkerStopped", function(provider, cluster, workerHandles, v
 #' @export
 setGeneric("killDockerWorkerContainers", function(provider, cluster, workerHandles, verbose){
     standardGeneric("killDockerWorkerContainers")
-})
+},
+signature = "provider")

@@ -13,6 +13,9 @@
 
 \item{verbose}{Integer. The verbose level, default 1.}
 }
+\value{
+A list with \code{initializing} and \code{running} integer elements
+}
 \description{
 The developer should define \code{runDockerWorkerContainers}, \code{getDockerWorkerStatus}
 and \code{killDockerWorkerContainers} instead.

@@ -1,6 +1,6 @@
 Package: ManagedCloudProvider
 Type: Package
-Title: Providing the kubernete-like functions to manage cloud instance for the non-kubernete cloud
+Title: Providing the Kubernete-Like Functions to Manage Cloud Instance for the Non-Kubernete Cloud
 Version: 1.0.0
 Authors@R: 
     person(given = "Jiefei",
@@ -9,13 +9,13 @@ Authors@R:
            email = "szwjf08@gmail.com")
 Description: 
   The package is designed as an extension to the "CloudProvider"
-  class in the "DockerParallel" package. It provides the kubernete-like 
-  functions to manage cloud instance for the non-kubernete cloud.
-  For creating a "CloudProvider" for the non-k8s cloud service, the developer
+  class in the "DockerParallel" package. It provides the kubernetes-like 
+  functions to manage cloud instance for the non-kubernetes cloud.
+  For creating a "CloudProvider" for the non-kubernetes cloud service, the developer
   needs to define the method for the generics "runDockerWorkerContainers",
   "getDockerWorkerStatus" and "killDockerWorkerContainers".
 Imports:
-  DockerParallel,
+  DockerParallel(>= 1.0.3),
   adagio,
   methods,
   utils,
@@ -28,8 +28,8 @@ Suggests:
     markdown,
     knitr,
     rmarkdown,
-    testthat (>= 3.0.0)
+    testthat (>= 3.0.0),
+    readr
 VignetteBuilder: knitr
-URL: https://github.com/Jiefei-Wang/DockerParallel
-BugReports: https://github.com/Jiefei-Wang/DockerParallel/issues
-Config/testthat/edition: 3
+URL: https://github.com/Jiefei-Wang/ManagedCloudProvider
+BugReports: https://github.com/Jiefei-Wang/ManagedCloudProvider/issues

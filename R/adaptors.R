@@ -5,6 +5,7 @@
 #'
 #' @inheritParams  DockerParallel::setDockerWorkerNumber
 #' @param workerNumber Integer(1), the worker number to be set
+#' @return No return value
 #' @export
 setMethod("setDockerWorkerNumber", "ManagedCloudProvider",
           function(provider, cluster, container, hardware, workerNumber, verbose)
@@ -34,6 +35,7 @@ setMethod("setDockerWorkerNumber", "ManagedCloudProvider",
 #' and `killDockerWorkerContainers` instead.
 #'
 #' @inheritParams  DockerParallel::getDockerWorkerNumbers
+#' @return A list with `initializing` and `running` integer elements
 #' @export
 setMethod("getDockerWorkerNumbers", "ManagedCloudProvider", function(provider, cluster, verbose){
     if(cluster$isServerRunning()){

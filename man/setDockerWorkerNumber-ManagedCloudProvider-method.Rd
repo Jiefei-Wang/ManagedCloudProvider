@@ -26,6 +26,9 @@
 
 \item{verbose}{Integer. The verbose level, default 1.}
 }
+\value{
+No return value
+}
 \description{
 The developer should define \code{runDockerWorkerContainers}, \code{getDockerWorkerStatus}
 and \code{killDockerWorkerContainers} instead.
