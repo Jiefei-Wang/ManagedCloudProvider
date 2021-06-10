@@ -10,7 +10,7 @@ Authors@R:
 Description: 
   Providing the kubernetes-like class 'ManagedCloudProvider' as a child class of 
   the 'CloudProvider' class in the 'DockerParallel' package. The class is able to
-  manage cloud instance for the non-kubernetes cloud service.
+  manage the cloud instance made by the non-kubernetes cloud service.
   For creating a provider for the non-kubernetes cloud service, the developer
   needs to define a reference class inherited from 'ManagedCloudProvider' and
   define the method for the generics runDockerWorkerContainers(),
