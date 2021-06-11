@@ -1,6 +1,6 @@
 Package: ManagedCloudProvider
 Type: Package
-Title: Providing the Kubernetes-Like Functions to Manage Cloud Instance for the Non-Kubernetes Cloud
+Title: Providing the Kubernetes-Like Functions for the Non-Kubernetes Cloud Service
 Version: 1.0.0
 Authors@R: 
     person(given = "Jiefei",
@@ -14,7 +14,8 @@ Description:
   For creating a provider for the non-kubernetes cloud service, the developer
   needs to define a reference class inherited from 'ManagedCloudProvider' and
   define the method for the generics runDockerWorkerContainers(),
-  getDockerWorkerStatus() and killDockerWorkerContainers().
+  getDockerWorkerStatus() and killDockerWorkerContainers(). For more information, please see
+  the vignette in this package and <https://CRAN.R-project.org/package=DockerParallel>
 Imports:
   DockerParallel(>= 1.0.3),
   adagio,

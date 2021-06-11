@@ -6,6 +6,22 @@
 #' @param provider A `ManagedCloudProvider` object
 #' @param handles the worker container handles
 #' @rdname managedHandles
+#' @examples
+#' ## make a dummy provider
+#' DummyProvider <- setRefClass("DummyProvider", contains = "ManagedCloudProvider")
+#' provider <- DummyProvider()
+#'
+#' ## No worker handle in the provider
+#' getManagedWorkerHandles(provider)
+#'
+#' ## Add worker handles
+#' addManagedWorkerHandles(provider, c("a", "b"))
+#' getManagedWorkerHandles(provider)
+#'
+#' ## It is possible to add the same handle
+#' ## if multiple workers share the same container
+#' addManagedWorkerHandles(provider, c("a"))
+#' getManagedWorkerHandles(provider)
 #' @returns
 #' addManagedWorkerHandles: No return value
 #' getManagedWorkerHandles: A character vector of the worker handles

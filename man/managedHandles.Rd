@@ -22,3 +22,20 @@ getManagedWorkerHandles: A character vector of the worker handles
 Add or get the worker container handles to the managed cloud provider. The
 handles can be duplicated if multiple workers share the same container
 }
+\examples{
+## make a dummy provider
+DummyProvider <- setRefClass("DummyProvider", contains = "ManagedCloudProvider")
+provider <- DummyProvider()
+
+## No worker handle in the provider
+getManagedWorkerHandles(provider)
+
+## Add worker handles
+addManagedWorkerHandles(provider, c("a", "b"))
+getManagedWorkerHandles(provider)
+
+## It is possible to add the same handle
+## if multiple workers share the same container
+addManagedWorkerHandles(provider, c("a"))
+getManagedWorkerHandles(provider)
+}
