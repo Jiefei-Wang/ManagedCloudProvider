@@ -1,6 +1,6 @@
 Package: ManagedCloudProvider
 Type: Package
-Title: Providing the Kubernetes-Like Functions to Manage Cloud Instance for the Non-Kubernete Cloud
+Title: Providing the Kubernetes-Like Functions to Manage Cloud Instance for the Non-Kubernetes Cloud
 Version: 1.0.0
 Authors@R: 
     person(given = "Jiefei",
